@@ -1,5 +1,7 @@
 class FoodsController < ApplicationController
-  def index; end
+  def index
+    @foods = Food.includes(:user).order(created_at: :desc)
+  end
 
   def new
     @food = Food.new
