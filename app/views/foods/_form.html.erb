@@ -3,6 +3,7 @@
     <%= form.label :name %>
     <%= form.text_field :name, required: true %>
   </p>
+  <%= form.file_field :image, accept: 'image/jpg, image/gif, image/png' %>
   <p>
     <%= form.label :comment %>
     <%= form.text_area :comment %>
