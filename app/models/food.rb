@@ -7,6 +7,6 @@ class Food < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   def liked_by?(user)
-    likes.exists?(user_id: user.id)
+    likes.any? { |like| like.user_id == user.id }
   end
 end

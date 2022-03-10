@@ -1,5 +1,10 @@
 <p>【メールアドレス】 <%= food.user.email %></p>
 <p>【料理名】  <%= food.name %></p>
+<% if food.liked_by?(current_user) %>
+  <%= render 'like', food: food %>
+<% else %>
+  <%= render 'dislike', food: food %>
+<% end %>
 <%= link_to '詳細', food %>
 <% if current_user.id == food.user.id %>
   <%= link_to '編集', edit_food_path(food) %>
