@@ -3,7 +3,7 @@ class Like < ApplicationRecord
   belongs_to :food
 
   validates :user_id, uniqueness: {
-    scope: :post_id,
+    scope: :food_id,
     message: "は同じ投稿に2回以上いいねはできません"
   }
 end
